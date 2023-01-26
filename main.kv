@@ -1,0 +1,110 @@
+# Start menu screen stuff defined here
+<StartMenuScreen>
+
+    # This section is for app background
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: root.background
+
+    # This section is out screen layout which is a float layout
+    FloatLayout:
+
+        # ID for our float layout (if needed)
+        id: floatlayout
+
+        # This section is for our app action bar
+        ActionBar:
+
+            # Size & Position
+            pos_hint: {'top':1}
+            height: 55
+
+            # Style
+            background_color: '#00000077'
+
+            # Action View
+            ActionView:
+                use_separator: True
+
+                # Action Previous
+                ActionPrevious:
+                    halign: 'center'
+                    title: f'[b][font={root.KremlinMenshevik}][color=#ffffff]Post[/color][color=#2fa7d4]Fix[/font][/color][/b]'
+                    with_previous: False
+                    markup: True
+                    app_icon: "no_picture.png"
+
+        # This section is for our text input
+        TextInput:
+
+            # ID for text input
+            id: textinput           
+            
+            # Size & Position
+            pos_hint: {"center_x": 0.5, "center_y": 0.78}
+            size_hint: (0.6, None)
+            height: "35dp"
+            line_width: 1
+
+            # Style
+            multiline: False
+            background_color: "#000000bb"
+            foreground_color: "#ffffff"
+            cursor_color: "#2fa7d4"
+            cursor_width: 2
+            font_name: root.SourceCodePro
+            halign: "left"
+            hint_text: "Expression (a+b-c)..."
+            hint_text_color: "#00cccc66"
+            selection_color: "#77777755"
+
+        # Label for help message
+        Label:
+
+            # Size & Position
+            pos_hint: {"center_x": 0.5, "center_y": 0.65}
+            size_hint: (0.6, 0.2)
+
+            # Style
+            markup: True
+            text: "[b]Enter expression without space.[/b]"
+            font_name: root.SourceCodePro
+            color: "00ffff"
+
+        # Postfix convert button
+        Button:
+
+            # ID
+            id: convert
+
+            # Size & Position
+            size_hint: (0.6, None)
+            pos_hint: {"center_x": 0.5, "center_y": 0.55}
+            height: "35dp"
+
+            # Style
+            markup: True
+            text: "[b][font=KremlinMenshevikBold]Convert[/font][/b]"
+            background_color: "#00000077"
+
+            # Action
+            on_press:
+                root.convert(textinput, output)
+
+        # Output
+        Label:
+
+            # ID
+            id: output
+
+            # Size & Position
+            pos_hint: {"center_x": 0.5, "center_y": 0.42}
+            size_hint: (0.6, 0.2)
+
+            # Style
+            markup: True
+            text: "[b]Output here...[/b]"
+            font_name: root.SourceCodePro
+            color: "ff0000"
