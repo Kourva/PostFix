@@ -9,7 +9,7 @@
 # Installation
 + clone
 ```bash
-git clone https://github.com/kozyol/PostFix && cd PostFix
+git clone https://github.com/Kourva/PostFix && cd PostFix
 ```
 + requirements
 ```bash
