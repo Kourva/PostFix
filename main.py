@@ -2,7 +2,7 @@
 
 
 # Simple app to convert Infix yo Postfix
-# GitHub: htpps://github.com/kozyol/PostFix
+# GitHub: htpps://github.com/Kourva/PostFix
 
 
 # Imports
